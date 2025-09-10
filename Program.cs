@@ -36,6 +36,11 @@ namespace oopgyak
         {
             return $"A tanulo neve: {nev} és {kor} éves!";
         }*/
+
+        public override string ToString()
+        {
+            return $"A tanulo neve: {nev} és kora {kor}!";
+        }
     }
     internal class Program
     {
@@ -43,15 +48,11 @@ namespace oopgyak
         {
             szemely tanulo1 = new szemely();
             tanulo1.Nev = "Jani";
-            Console.WriteLine(tanulo1.Nev);
             tanulo1.Kor = 15;
-            Console.WriteLine(tanulo1.Kor);
-            /*  szemely tanulo1 = new szemely("Jani", 55);
-                Console.WriteLine(tanulo1.Kir());
-                szemely tanulo2 = new szemely("Peti", 25);
-         Console.WriteLine(tanulo2.Kir());
-               */
+            Console.WriteLine(tanulo1);
+            
 
+            
         }
     }
 }
