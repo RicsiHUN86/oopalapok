@@ -8,15 +8,27 @@ namespace oopgyak
 {
     public class szemely
     {
-        public string nev = "Ádám";
-        public int kor = 34;
+        private string nev;
+        private int kor;
+
+        public szemely(string Nev, int Kor)
+        {
+            nev = Nev;
+            kor = Kor;
+        }
+        public string Kir()
+        {
+            return $"A tanulo neve: {nev} és {kor} éves!";
+        }
     }
     internal class Program
     {
         static void Main(string[] args)
         {
-            szemely tanulo1 = new szemely();
-            Console.WriteLine($"A tanulo neve: {tanulo1.nev} és {tanulo1.kor} éves!");
+            szemely tanulo1 = new szemely("Jani", 55);
+            Console.WriteLine(tanulo1.Kir());
+            szemely tanulo2 = new szemely("Peti", 25);
+            Console.WriteLine(tanulo2.Kir());
         }
     }
 }
