@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,10 +9,25 @@ namespace oopgyak
 {
     public class szemely
     {
+
         private string nev;
         private int kor;
 
-        public szemely(string Nev, int Kor)
+        public string Nev
+        {
+            get { return nev; }
+            set { nev = value; }
+        }
+
+        public int Kor
+        {
+            get { return kor; }
+            set
+            { kor = value;
+            }
+        }
+
+        /*public szemely(string Nev, int Kor)
         {
             nev = Nev;
             kor = Kor;
@@ -19,16 +35,23 @@ namespace oopgyak
         public string Kir()
         {
             return $"A tanulo neve: {nev} és {kor} éves!";
-        }
+        }*/
     }
     internal class Program
     {
         static void Main(string[] args)
         {
-            szemely tanulo1 = new szemely("Jani", 55);
-            Console.WriteLine(tanulo1.Kir());
-            szemely tanulo2 = new szemely("Peti", 25);
-            Console.WriteLine(tanulo2.Kir());
+            szemely tanulo1 = new szemely();
+            tanulo1.Nev = "Jani";
+            Console.WriteLine(tanulo1.Nev);
+            tanulo1.Kor = 15;
+            Console.WriteLine(tanulo1.Kor);
+            /*  szemely tanulo1 = new szemely("Jani", 55);
+                Console.WriteLine(tanulo1.Kir());
+                szemely tanulo2 = new szemely("Peti", 25);
+         Console.WriteLine(tanulo2.Kir());
+               */
+
         }
     }
 }
